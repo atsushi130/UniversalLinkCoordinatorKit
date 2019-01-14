@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0DEC148321EC6B050022B7AC /* UniversalLinkCoordinatorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DEC148121EC6B050022B7AC /* UniversalLinkCoordinatorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DEC148B21EC6D120022B7AC /* CoordinatorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEC148A21EC6D120022B7AC /* CoordinatorKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DEC147E21EC6B050022B7AC /* UniversalLinkCoordinatorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UniversalLinkCoordinatorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DEC148121EC6B050022B7AC /* UniversalLinkCoordinatorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniversalLinkCoordinatorKit.h; sourceTree = "<group>"; };
 		0DEC148221EC6B050022B7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DEC148A21EC6D120022B7AC /* CoordinatorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoordinatorKit.framework; path = Carthage/Build/iOS/CoordinatorKit.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +23,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEC148B21EC6D120022B7AC /* CoordinatorKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30,6 +33,7 @@
 		0DEC147421EC6B040022B7AC = {
 			isa = PBXGroup;
 			children = (
+				0DEC148921EC6CF70022B7AC /* Frameworks */,
 				0DEC148021EC6B050022B7AC /* UniversalLinkCoordinatorKit */,
 				0DEC147F21EC6B050022B7AC /* Products */,
 			);
@@ -50,6 +54,14 @@
 				0DEC148221EC6B050022B7AC /* Info.plist */,
 			);
 			path = UniversalLinkCoordinatorKit;
+			sourceTree = "<group>";
+		};
+		0DEC148921EC6CF70022B7AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DEC148A21EC6D120022B7AC /* CoordinatorKit.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +86,7 @@
 				0DEC147A21EC6B050022B7AC /* Frameworks */,
 				0DEC147B21EC6B050022B7AC /* Headers */,
 				0DEC147C21EC6B050022B7AC /* Resources */,
+				0DEC148C21EC6D1C0022B7AC /* copy-frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +138,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DEC148C21EC6D1C0022B7AC /* copy-frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CoordinatorKit.framework",
+			);
+			name = "copy-frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CoordinatorKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DEC147921EC6B050022B7AC /* Sources */ = {
@@ -260,6 +292,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UniversalLinkCoordinatorKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -281,6 +317,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UniversalLinkCoordinatorKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
