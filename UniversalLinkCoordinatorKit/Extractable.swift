@@ -10,13 +10,13 @@ public protocol Extractable {
     static func extract(from: String) -> Self?
 }
 
-public extension Int: Extractable {
+extension Int: Extractable {
     public static func extract(from string: String) -> Int? {
         return Int(string)
     }
 }
 
-public extension String: Extractable {
+extension String: Extractable {
     public static func extract(from string: String) -> String? {
         return string
     }
