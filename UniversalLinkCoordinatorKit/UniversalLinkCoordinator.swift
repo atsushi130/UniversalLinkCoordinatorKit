@@ -16,8 +16,7 @@ public protocol UniversalLinkCoordinator: Coordinator where Route: UniversalLink
 
 public extension UniversalLinkCoordinator {
     public func transitionIfNeeded(from universalLink: String) {
-        let scheme = Self.scheme
-        guard let route = Self.Route.handle(scheme: scheme, universalLink: universalLink) else { return }
+        guard let route = Self.Route.handle(scheme: Self.scheme, universalLink: universalLink) else { return }
         self.transition(to: route)
     }
 }
