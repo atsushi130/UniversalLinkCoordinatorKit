@@ -8,6 +8,7 @@
 
 public struct UniversalLink {
     
+    public let scheme: String
     public let uri: String
     public let queryString: QueryString?
     
@@ -24,10 +25,10 @@ public struct UniversalLink {
         guard universalLinks.count == 2,
             let components = URLComponents(string: universalLink),
             let queryItems = components.queryItems else {
-                return UniversalLink(uri: uri, queryString: nil)
+                return UniversalLink(scheme: scheme, uri: uri, queryString: nil)
         }
         
-        return UniversalLink(uri: uri, queryString: QueryString(from: queryItems))
+        return UniversalLink(scheme: scheme, uri: uri, queryString: QueryString(from: queryItems))
     }
 }
 
