@@ -24,23 +24,26 @@ final class MyUniversalLinkCoordinator: UniversalLinkCoordinator {
     static let scheme = "org-app"
     var viewController: UIViewController?
 
+    /// Universal Links
+    /// Scheme: - org-app
+    /// route:
+    ///     - org-app://threads?thread_id=Int
+    ///     - org-app://home
     enum Route {
-        case settings(settingId: Int)
+        case threads(threadId: Int)
         case home
-    }
-
-    func transitionIfNeeded(from universalLink: String) {
-        guard let route = Route.handle(scheme: Self.scheme, universalLink: universalLink) else { return }
-        self.transition(to: route)
     }
 
     func transition(to route: Route) {
         switch route {
-        case .settings(let settingId):
-            let settingViewController = SettingViewController.viewController() // ref: CoordinatorKit
-            self.viewController.present(settingViewController, animated: true)
+        case .threads(let threadId):
+            let ThreadsViewController = ThreadsViewController.instantiate() // ref: CoordinatorKit
+            self.viewController.present(threadsViewController, animated: true) {
+                let threadViewController = ThreadViewController.instantiate()
+                threadsViewController.present(threadViewController, animated: true)
+            }
         case .home
-            let homeViewController = HomeViewController.viewController()
+            let homeViewController = HomeViewController.instantiate()
             self.viewController.present(homeViewController, animated: true)
         }
     }
@@ -50,15 +53,16 @@ extension MyUniversalLinkCoordinator.Route {
     static func handle(scheme: String, universalLink: String) -> Route? {
         guard let parsedUniversalLink = UniversalLink.parse(scheme: scheme, universalLink: universalLink) else { return nil }
         switch parsedUniversalLink.uri {
-        case "/settings":
-            guard let settingId = universalLink.queryString["setting_id", Int.self] else { return nil }
-            return .settings(settingId: settingId)
+        case "/threads":
+            guard let threadId = universalLink.queryString["thread_id", Int.self] else { return nil }
+            return .threads(threadId: threadId)
         case "/home":
             return .home
         }
     }
 }
 ```
+reference: [CoordinatorKit](https://github.com/atsushi130/CoordinatorKit)
 
 ## License
 UniversalLinkCoordinatorKit is available under the MIT license. See the [LICENSE file](https://github.com/atsushi130/UniversalLinkCoordinatorKit/blob/master/license).
