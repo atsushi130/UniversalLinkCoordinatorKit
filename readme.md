@@ -64,5 +64,17 @@ extension MyUniversalLinkCoordinator.Route {
 ```
 reference: [CoordinatorKit](https://github.com/atsushi130/CoordinatorKit)
 
+## UniversalLink
+```swift
+let universalLink = UniversalLink.parse(scheme: "org-app", universalLink: "org-app://threads?thread_id=1")
+print(universalLink.scheme) // "org-app"
+print(universalLink,uri) // "/threads"
+print(universalLink.queryString) // ["thread_id": "1"]
+
+let threadId: Int? = universalLink.queryString["thread_id", Int.self]
+let threadId: String? = universalLink.queryString["thread_id", String.self]
+let threadId: String? = universalLink.queryString["thread_id"]
+```
+
 ## License
 UniversalLinkCoordinatorKit is available under the MIT license. See the [LICENSE file](https://github.com/atsushi130/UniversalLinkCoordinatorKit/blob/master/license).
