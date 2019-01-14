@@ -25,7 +25,8 @@ final class MyUniversalLinkCoordinator: UniversalLinkCoordinator {
     var viewController: UIViewController?
 
     /// Universal Links
-    /// Scheme: - org-app
+    /// Scheme:
+    ///     - org-app
     /// route:
     ///     - org-app://threads?thread_id=Int
     ///     - org-app://home
