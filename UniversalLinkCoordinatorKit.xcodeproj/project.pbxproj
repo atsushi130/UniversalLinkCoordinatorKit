@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0DEC148321EC6B050022B7AC /* UniversalLinkCoordinatorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DEC148121EC6B050022B7AC /* UniversalLinkCoordinatorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DEC148B21EC6D120022B7AC /* CoordinatorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEC148A21EC6D120022B7AC /* CoordinatorKit.framework */; };
+		0DEC148E21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC148D21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift */; };
+		0DEC149021EC6F620022B7AC /* UniversalLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC148F21EC6F620022B7AC /* UniversalLink.swift */; };
+		0DEC149221EC6FA90022B7AC /* Extractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC149121EC6FA90022B7AC /* Extractable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +19,9 @@
 		0DEC148121EC6B050022B7AC /* UniversalLinkCoordinatorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniversalLinkCoordinatorKit.h; sourceTree = "<group>"; };
 		0DEC148221EC6B050022B7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DEC148A21EC6D120022B7AC /* CoordinatorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoordinatorKit.framework; path = Carthage/Build/iOS/CoordinatorKit.framework; sourceTree = SOURCE_ROOT; };
+		0DEC148D21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkCoordinator.swift; sourceTree = "<group>"; };
+		0DEC148F21EC6F620022B7AC /* UniversalLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLink.swift; sourceTree = "<group>"; };
+		0DEC149121EC6FA90022B7AC /* Extractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extractable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,9 @@
 			children = (
 				0DEC148121EC6B050022B7AC /* UniversalLinkCoordinatorKit.h */,
 				0DEC148221EC6B050022B7AC /* Info.plist */,
+				0DEC148D21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift */,
+				0DEC148F21EC6F620022B7AC /* UniversalLink.swift */,
+				0DEC149121EC6FA90022B7AC /* Extractable.swift */,
 			);
 			path = UniversalLinkCoordinatorKit;
 			sourceTree = "<group>";
@@ -108,6 +117,7 @@
 				TargetAttributes = {
 					0DEC147D21EC6B050022B7AC = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -163,6 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEC148E21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift in Sources */,
+				0DEC149221EC6FA90022B7AC /* Extractable.swift in Sources */,
+				0DEC149021EC6F620022B7AC /* UniversalLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +298,7 @@
 		0DEC148721EC6B050022B7AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -302,6 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.atsushi130.UniversalLinkCoordinatorKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -310,6 +325,7 @@
 		0DEC148821EC6B050022B7AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
