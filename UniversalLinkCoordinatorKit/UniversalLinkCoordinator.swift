@@ -11,11 +11,11 @@ import CoordinatorKit
 
 public protocol UniversalLinkCoordinator: Coordinator where Route: UniversalLinkHandlable {
     static var scheme: String { get }
-    func transitionIfNeeded(from universalLink: String)
+    func transitionIfPossible(from universalLink: String)
 }
 
 public extension UniversalLinkCoordinator {
-    public func transitionIfNeeded(from universalLink: String) {
+    public func transitionIfPossible(from universalLink: String) {
         guard let route = Self.Route.handle(scheme: Self.scheme, universalLink: universalLink) else { return }
         self.transition(to: route)
     }
