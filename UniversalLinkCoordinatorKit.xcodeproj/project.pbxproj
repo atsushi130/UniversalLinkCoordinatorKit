@@ -95,7 +95,6 @@
 				0DEC147A21EC6B050022B7AC /* Frameworks */,
 				0DEC147B21EC6B050022B7AC /* Headers */,
 				0DEC147C21EC6B050022B7AC /* Resources */,
-				0DEC148C21EC6D1C0022B7AC /* copy-frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,25 +147,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0DEC148C21EC6D1C0022B7AC /* copy-frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/CoordinatorKit.framework",
-			);
-			name = "copy-frameworks";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CoordinatorKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DEC147921EC6B050022B7AC /* Sources */ = {
