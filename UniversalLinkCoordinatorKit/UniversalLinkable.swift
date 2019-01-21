@@ -8,14 +8,15 @@
 
 import Foundation
 
-public protocol UniversalLinkable {
+public protocol UniversalLinkable: UniversalLinkCaseIterable {
+    static var scheme: String { get }
     var universalLink: URL { get }
     func parse(_ universalLink: URL) -> UniversalLinkContext?
 }
 
 public extension UniversalLinkable where Self: RawRepresentable, Self.RawValue == String {
     public var universalLink: URL {
-        return URL(string: "" + ":/" + self.rawValue)!
+        return URL(string: Self.scheme + ":/" + self.rawValue)!
     }
 }
 
