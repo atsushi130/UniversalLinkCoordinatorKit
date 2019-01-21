@@ -12,6 +12,11 @@
 		0DEC148E21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC148D21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift */; };
 		0DEC149021EC6F620022B7AC /* UniversalLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC148F21EC6F620022B7AC /* UniversalLink.swift */; };
 		0DEC149221EC6FA90022B7AC /* Extractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC149121EC6FA90022B7AC /* Extractable.swift */; };
+		0DEC14B521F6028E0022B7AC /* UniversalLinkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14B421F6028E0022B7AC /* UniversalLinkable.swift */; };
+		0DEC14B721F6044B0022B7AC /* UniversalLinkContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14B621F6044B0022B7AC /* UniversalLinkContext.swift */; };
+		0DEC14B921F604840022B7AC /* UniversalLinkDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14B821F604840022B7AC /* UniversalLinkDictionary.swift */; };
+		0DEC14BB21F605600022B7AC /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14BA21F605600022B7AC /* Dictionary+.swift */; };
+		0DEC14BD21F606610022B7AC /* UniversalLinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14BC21F606610022B7AC /* UniversalLinkRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		0DEC148D21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkCoordinator.swift; sourceTree = "<group>"; };
 		0DEC148F21EC6F620022B7AC /* UniversalLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLink.swift; sourceTree = "<group>"; };
 		0DEC149121EC6FA90022B7AC /* Extractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extractable.swift; sourceTree = "<group>"; };
+		0DEC14B421F6028E0022B7AC /* UniversalLinkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkable.swift; sourceTree = "<group>"; };
+		0DEC14B621F6044B0022B7AC /* UniversalLinkContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkContext.swift; sourceTree = "<group>"; };
+		0DEC14B821F604840022B7AC /* UniversalLinkDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkDictionary.swift; sourceTree = "<group>"; };
+		0DEC14BA21F605600022B7AC /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
+		0DEC14BC21F606610022B7AC /* UniversalLinkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,11 @@
 				0DEC148D21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift */,
 				0DEC148F21EC6F620022B7AC /* UniversalLink.swift */,
 				0DEC149121EC6FA90022B7AC /* Extractable.swift */,
+				0DEC14B421F6028E0022B7AC /* UniversalLinkable.swift */,
+				0DEC14B621F6044B0022B7AC /* UniversalLinkContext.swift */,
+				0DEC14B821F604840022B7AC /* UniversalLinkDictionary.swift */,
+				0DEC14BA21F605600022B7AC /* Dictionary+.swift */,
+				0DEC14BC21F606610022B7AC /* UniversalLinkRouter.swift */,
 			);
 			path = UniversalLinkCoordinatorKit;
 			sourceTree = "<group>";
@@ -174,8 +189,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DEC148E21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift in Sources */,
+				0DEC14B521F6028E0022B7AC /* UniversalLinkable.swift in Sources */,
 				0DEC149221EC6FA90022B7AC /* Extractable.swift in Sources */,
+				0DEC14B721F6044B0022B7AC /* UniversalLinkContext.swift in Sources */,
+				0DEC14BD21F606610022B7AC /* UniversalLinkRouter.swift in Sources */,
+				0DEC14BB21F605600022B7AC /* Dictionary+.swift in Sources */,
 				0DEC149021EC6F620022B7AC /* UniversalLink.swift in Sources */,
+				0DEC14B921F604840022B7AC /* UniversalLinkDictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
