@@ -1,5 +1,5 @@
 //
-//  Context.swift
+//  UniversalLinkContext.swift
 //  UniversalLinkCoordinatorKit
 //
 //  Created by Atsushi Miyake on 2019/01/21.
@@ -8,11 +8,12 @@
 
 import Foundation
 
-// MARK: - UniversalLinkContext
-struct UniversalLinkContext {
-    let parameters: UniversalLinkDictionary
-    let queryString: UniversalLinkDictionary
-    init(_ parameters: [String: String], and queryString: [String: String]) {
+public struct UniversalLinkContext {
+    
+    public let parameters: UniversalLinkDictionary
+    public let queryString: UniversalLinkDictionary
+    
+    public init(_ parameters: [String: String], and queryString: [String: String]) {
         self.parameters  = UniversalLinkDictionary(parameters)
         self.queryString = UniversalLinkDictionary(queryString)
     }
