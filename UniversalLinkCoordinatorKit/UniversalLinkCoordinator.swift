@@ -9,18 +9,19 @@
 import Foundation
 import CoordinatorKit
 
-public protocol UniversalLinkCoordinator: Coordinator where Route: UniversalLinkHandlable {
+public protocol UniversalLinkCoordinator {
+    associatedtype Route
+    associatedtype UniversalLink: UniversalLinkable
+    var router: UniversalLinkRouter<UniversalLink> { get }
     static var scheme: String { get }
-    func transitionIfPossible(from universalLink: String)
+    func transitionIfPossible(open universalLink: URL) -> Bool
+    func transition(to route: Route)
 }
 
-public extension UniversalLinkCoordinator {
-    public func transitionIfPossible(from universalLink: String) {
-        guard let route = Self.Route.handle(scheme: Self.scheme, universalLink: universalLink) else { return }
+public extension UniversalLinkCoordinator where Route == (UniversalLink, UniversalLinkContext) {
+    public func transitionIfPossible(open universalLink: URL) -> Bool {
+        guard let route = self.router.handle(universalLink) else { return false }
         self.transition(to: route)
+        return true
     }
-}
-
-public protocol UniversalLinkHandlable {
-    static func handle(scheme: String, universalLink: String) -> Self?
 }
