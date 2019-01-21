@@ -16,7 +16,6 @@
 		0DEC14B921F604840022B7AC /* UniversalLinkDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14B821F604840022B7AC /* UniversalLinkDictionary.swift */; };
 		0DEC14BB21F605600022B7AC /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14BA21F605600022B7AC /* Dictionary+.swift */; };
 		0DEC14BD21F606610022B7AC /* UniversalLinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14BC21F606610022B7AC /* UniversalLinkRouter.swift */; };
-		0DEC14BF21F60F360022B7AC /* UniversalLinkCaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14BE21F60F360022B7AC /* UniversalLinkCaseIterable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		0DEC14B821F604840022B7AC /* UniversalLinkDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkDictionary.swift; sourceTree = "<group>"; };
 		0DEC14BA21F605600022B7AC /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
 		0DEC14BC21F606610022B7AC /* UniversalLinkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkRouter.swift; sourceTree = "<group>"; };
-		0DEC14BE21F60F360022B7AC /* UniversalLinkCaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkCaseIterable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +73,6 @@
 				0DEC14B821F604840022B7AC /* UniversalLinkDictionary.swift */,
 				0DEC14BA21F605600022B7AC /* Dictionary+.swift */,
 				0DEC14BC21F606610022B7AC /* UniversalLinkRouter.swift */,
-				0DEC14BE21F60F360022B7AC /* UniversalLinkCaseIterable.swift */,
 			);
 			path = UniversalLinkCoordinatorKit;
 			sourceTree = "<group>";
@@ -193,7 +190,6 @@
 				0DEC149221EC6FA90022B7AC /* Extractable.swift in Sources */,
 				0DEC14B721F6044B0022B7AC /* UniversalLinkContext.swift in Sources */,
 				0DEC14BD21F606610022B7AC /* UniversalLinkRouter.swift in Sources */,
-				0DEC14BF21F60F360022B7AC /* UniversalLinkCaseIterable.swift in Sources */,
 				0DEC14BB21F605600022B7AC /* Dictionary+.swift in Sources */,
 				0DEC14B921F604840022B7AC /* UniversalLinkDictionary.swift in Sources */,
 			);
