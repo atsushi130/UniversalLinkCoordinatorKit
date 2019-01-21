@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoordinatorKit
 
 public protocol UniversalLinkCoordinator: class {
     associatedtype Route
