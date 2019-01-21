@@ -21,60 +21,22 @@ Conform to UniversalLinkCoordinator:
 ```swift
 final class MyUniversalLinkCoordinator: UniversalLinkCoordinator {
 
-    static let scheme = "org-app"
-    var viewController: UIViewController?
-
-    /// Universal Links
-    /// Scheme:
-    ///     - org-app
-    /// route:
-    ///     - org-app://threads?thread_id=Int
-    ///     - org-app://home
-    enum Route {
-        case threads(threadId: Int)
-        case home
+    let router = UniversalLinkRouter<UniversalLink>()
+    
+    typealias Route = (universalLink: UniversalLink, context: UniversalLinkContext)
+    enum UniversalLink: String, UniversalLinkable {
+        static var scheme: String { return "my-app" }
+        case threads = "/threads/:thread_id"
     }
-
+    
     func transition(to route: Route) {
-        switch route {
-        case .threads(let threadId):
-            let ThreadsViewController = ThreadsViewController.instantiate() // ref: CoordinatorKit
-            self.viewController.present(threadsViewController, animated: true) {
-                let threadViewController = ThreadViewController.instantiate()
-                threadsViewController.present(threadViewController, animated: true)
-            }
-        case .home
-            let homeViewController = HomeViewController.instantiate()
-            self.viewController.present(homeViewController, animated: true)
+        switch route.universalLink {
+        case .threads:
+            guard let threadId = route.context.parameters["thread_id", as: Int.self] else { return }
+            print("threadId: \(threadId)")
         }
     }
 }
-
-extension MyUniversalLinkCoordinator.Route {
-    static func handle(scheme: String, universalLink: String) -> Route? {
-        guard let parsedUniversalLink = UniversalLink.parse(scheme: scheme, universalLink: universalLink) else { return nil }
-        switch parsedUniversalLink.uri {
-        case "/threads":
-            guard let threadId = universalLink.queryString["thread_id", Int.self] else { return nil }
-            return .threads(threadId: threadId)
-        case "/home":
-            return .home
-        }
-    }
-}
-```
-reference: [CoordinatorKit](https://github.com/atsushi130/CoordinatorKit)
-
-## UniversalLink
-```swift
-let universalLink = UniversalLink.parse(scheme: "org-app", universalLink: "org-app://threads?thread_id=1")
-print(universalLink.scheme) // "org-app"
-print(universalLink,uri) // "/threads"
-print(universalLink.queryString) // ["thread_id": "1"]
-
-let threadId: Int? = universalLink.queryString["thread_id", Int.self]
-let threadId: String? = universalLink.queryString["thread_id", String.self]
-let threadId: String? = universalLink.queryString["thread_id"]
 ```
 
 ## License
