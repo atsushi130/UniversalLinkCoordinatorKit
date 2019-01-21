@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol UniversalLinkable {
+public protocol UniversalLinkable: UniversalLinkCaseIterable {
     static var scheme: String { get }
     var universalLink: URL { get }
     func parse(_ universalLink: URL) -> UniversalLinkContext?
