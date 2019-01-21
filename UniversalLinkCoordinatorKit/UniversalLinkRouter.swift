@@ -16,7 +16,7 @@ public final class UniversalLinkRouter<UniversalLink> where UniversalLink: Unive
         self.register(routes: UniversalLink.allCases)
     }
     
-    public func register(routes: [UniversalLink]) {
+    private func register(routes: [UniversalLink]) {
         routes.forEach { self.routes.append($0) }
     }
     
