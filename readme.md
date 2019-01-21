@@ -22,9 +22,13 @@ Conform to UniversalLinkCoordinator:
 final class MyUniversalLinkCoordinator: UniversalLinkCoordinator {
 
     let router = UniversalLinkRouter<UniversalLink>()
+
+    init() {
+        self.router.register(routes: UniversalLink.allCases)
+    }
     
     typealias Route = (universalLink: UniversalLink, context: UniversalLinkContext)
-    enum UniversalLink: String, UniversalLinkable {
+    enum UniversalLink: String, UniversalLinkable, CaseIterable {
         static var scheme: String { return "my-app" }
         case threads = "/threads/:thread_id"
     }
@@ -36,6 +40,14 @@ final class MyUniversalLinkCoordinator: UniversalLinkCoordinator {
             print("threadId: \(threadId)")
         }
     }
+}
+```
+
+**AppDelegate.swift**
+```
+let coordinator = MyUniversalLinkCoordinator()
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    return self.coordinator.transitionIfPossible(open: url)
 }
 ```
 
