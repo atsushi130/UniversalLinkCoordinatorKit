@@ -47,7 +47,7 @@ extension UniversalLinkable {
                 parameters + parameter
             }
         
-        let queryString = URLComponents(string: universalLink.query ?? "")
+        let queryString = URLComponents(url: universalLink, resolvingAgainstBaseURL: true)
             .flatMap { $0.queryItems }
             .map { queryItems -> [String: String] in
                 queryItems
