@@ -52,7 +52,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
     switch application.applicationState {
 	case .active: break
     case .background, .inactive:
-        self.coordinator.transitionIfPossible(open: url, with: .userInfp(userInfo))
+        self.coordinator.transitionIfPossible(open: url, with: .userInfo(userInfo))
     }
 }
 ```
