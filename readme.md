@@ -45,6 +45,20 @@ let coordinator = MyUniversalLinkCoordinator()
 func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
     return self.coordinator.transitionIfPossible(open: url, with: .options(options))
 }
+
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    guard let urlString = userInfo["url"] as? String,
+          let url = URL(string: urlString) else { return }
+    switch application.applicationState {
+	case .active: break
+    case .background, .inactive:
+        self.coordinator.transitionIfPossible(open: url, with: .userInfp(userInfo))
+    }
+}
+
+switch applicationState {
+	        case .active?: return false
+	        case .inactive?: self.shouldOpenUrl = universalLink
 ```
 
 ## License
