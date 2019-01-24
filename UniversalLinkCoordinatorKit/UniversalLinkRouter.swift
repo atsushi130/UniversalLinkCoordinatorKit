@@ -10,14 +10,10 @@ import Foundation
 
 public final class UniversalLinkRouter<UniversalLink> where UniversalLink: UniversalLinkable {
 
-    private var routes: [UniversalLink] = []
+    private let routes: [UniversalLink]
     
     init() {
-        self.register(routes: UniversalLink.allCases)
-    }
-    
-    private func register(routes: [UniversalLink]) {
-        routes.forEach { self.routes.append($0) }
+        self.routes = UniversalLink.allCases
     }
     
     public func handle(_ universalLink: URL) -> (UniversalLink, UniversalLinkContext)? {
