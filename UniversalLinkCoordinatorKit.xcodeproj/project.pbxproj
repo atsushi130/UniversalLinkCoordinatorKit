@@ -16,6 +16,7 @@
 		0DEC14BB21F605600022B7AC /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14BA21F605600022B7AC /* Dictionary+.swift */; };
 		0DEC14BD21F606610022B7AC /* UniversalLinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14BC21F606610022B7AC /* UniversalLinkRouter.swift */; };
 		0DEC14C121F61FE50022B7AC /* UniversalLinkCaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14C021F61FE50022B7AC /* UniversalLinkCaseIterable.swift */; };
+		0DEC14C321F9F2C20022B7AC /* UniversalLinkInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14C221F9F2C20022B7AC /* UniversalLinkInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0DEC14BA21F605600022B7AC /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
 		0DEC14BC21F606610022B7AC /* UniversalLinkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkRouter.swift; sourceTree = "<group>"; };
 		0DEC14C021F61FE50022B7AC /* UniversalLinkCaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkCaseIterable.swift; sourceTree = "<group>"; };
+		0DEC14C221F9F2C20022B7AC /* UniversalLinkInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				0DEC14BA21F605600022B7AC /* Dictionary+.swift */,
 				0DEC14BC21F606610022B7AC /* UniversalLinkRouter.swift */,
 				0DEC14C021F61FE50022B7AC /* UniversalLinkCaseIterable.swift */,
+				0DEC14C221F9F2C20022B7AC /* UniversalLinkInformation.swift */,
 			);
 			path = UniversalLinkCoordinatorKit;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEC14C321F9F2C20022B7AC /* UniversalLinkInformation.swift in Sources */,
 				0DEC148E21EC6E1F0022B7AC /* UniversalLinkCoordinator.swift in Sources */,
 				0DEC14B521F6028E0022B7AC /* UniversalLinkable.swift in Sources */,
 				0DEC149221EC6FA90022B7AC /* Extractable.swift in Sources */,
