@@ -55,10 +55,6 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
         self.coordinator.transitionIfPossible(open: url, with: .userInfp(userInfo))
     }
 }
-
-switch applicationState {
-	        case .active?: return false
-	        case .inactive?: self.shouldOpenUrl = universalLink
 ```
 
 ## License
