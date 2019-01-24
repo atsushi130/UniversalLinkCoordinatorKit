@@ -16,9 +16,9 @@ public struct UniversalLinkDictionary {
         self.dictionary = dictionary
     }
     
-    public subscript<T: Extractable>(key: String, as type: T.Type) -> T? {
+    public subscript<T: Extractable>(key: String) -> T? {
         guard let value = self.dictionary[key] else { return nil }
-        return type.extract(from: value)
+        return T.extract(from: value)
     }
     
     public subscript(key: String) -> String? {
