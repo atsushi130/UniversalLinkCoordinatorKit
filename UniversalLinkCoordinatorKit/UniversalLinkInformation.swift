@@ -6,4 +6,9 @@
 //  Copyright © 2019年 Atsushi Miyake. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public enum UniversalLinkInformation {
+    case options([UIApplicationOpenURLOptionsKey : Any])
+    case userInfo([AnyHashable : Any])
+}
