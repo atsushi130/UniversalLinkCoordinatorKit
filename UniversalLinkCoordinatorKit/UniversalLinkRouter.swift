@@ -12,7 +12,7 @@ public final class UniversalLinkRouter<UniversalLink> where UniversalLink: Unive
 
     private let routes: [UniversalLink]
     
-    init() {
+    public init() {
         self.routes = UniversalLink.allCases
     }
     
