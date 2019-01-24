@@ -16,11 +16,12 @@ public final class UniversalLinkRouter<UniversalLink> where UniversalLink: Unive
         self.routes = UniversalLink.allCases
     }
     
-    public func handle(_ universalLink: URL) -> (UniversalLink, UniversalLinkContext)? {
+    public func handle(_ universalLink: URL, with information: UniversalLinkInformation?) -> (UniversalLink, UniversalLinkContext)? {
         return self.routes
             .lazy
             .flatMap { route in
-                if let context = route.parse(universalLink) {
+                if var context = route.parse(universalLink) {
+                    context.configureInformation(information)
                     return (route, context)
                 } else {
                     return nil
