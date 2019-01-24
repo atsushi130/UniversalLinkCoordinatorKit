@@ -32,7 +32,7 @@ final class MyUniversalLinkCoordinator: UniversalLinkCoordinator {
     func transition(to route: Route) {
         switch route.universalLink {
         case .threads:
-            guard let threadId = route.context.parameters["thread_id", as: Int.self] else { return }
+            guard let threadId: Int = route.context.parameters["thread_id"] else { return }
             print("threadId: \(threadId)")
         }
     }
@@ -43,7 +43,7 @@ final class MyUniversalLinkCoordinator: UniversalLinkCoordinator {
 ```swift
 let coordinator = MyUniversalLinkCoordinator()
 func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    return self.coordinator.transitionIfPossible(open: url)
+    return self.coordinator.transitionIfPossible(open: url, with: .options(options))
 }
 ```
 
