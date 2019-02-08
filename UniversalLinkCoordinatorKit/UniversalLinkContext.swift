@@ -13,7 +13,7 @@ public struct UniversalLinkContext {
     public let parameters: UniversalLinkDictionary
     public let queryString: UniversalLinkDictionary
     public private(set) var userInfo: [AnyHashable : Any] = [:]
-    public private(set) var options: [UIApplicationOpenURLOptionsKey: Any] = [:]
+    public private(set) var options: [UIApplication.OpenURLOptionsKey: Any] = [:]
     
     public init(_ parameters: [String: String], and queryString: [String: String]) {
         self.parameters  = UniversalLinkDictionary(parameters)

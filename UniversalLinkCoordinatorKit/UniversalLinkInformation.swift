@@ -9,6 +9,6 @@
 import UIKit
 
 public enum UniversalLinkInformation {
-    case options([UIApplicationOpenURLOptionsKey : Any])
+    case options([UIApplication.OpenURLOptionsKey : Any])
     case userInfo([AnyHashable : Any])
 }

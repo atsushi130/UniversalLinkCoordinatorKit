@@ -19,7 +19,7 @@ public final class UniversalLinkRouter<UniversalLink> where UniversalLink: Unive
     public func handle(_ universalLink: URL, with information: UniversalLinkInformation?) -> (UniversalLink, UniversalLinkContext)? {
         return self.routes
             .lazy
-            .flatMap { route in
+            .compactMap { route in
                 if var context = route.parse(universalLink) {
                     context.configureInformation(information)
                     return (route, context)
