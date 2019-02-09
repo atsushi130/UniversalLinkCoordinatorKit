@@ -20,7 +20,7 @@ public extension UniversalLinkable where Self: RawRepresentable, Self.RawValue =
     }
 }
 
-extension UniversalLinkable {
+public extension UniversalLinkable {
     
     func parse(_ universalLink: URL) -> UniversalLinkContext? {
         
