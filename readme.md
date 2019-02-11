@@ -7,7 +7,7 @@
 <p align="center">
     <a href=".license"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a> 
     <a href="https://github.com/atsushi130/UniversalLinkCoordinatorKit.git"><img src="https://img.shields.io/badge/Swift-UniversalLinkCoordinatorKit-3B5998.svg"></a> 
-    <img src="https://img.shields.io/badge/Swift-4-ffac45.svg">
+    <img src="https://img.shields.io/badge/Swift-4.2-ffac45.svg">
 </p>
 
 ## Installation
